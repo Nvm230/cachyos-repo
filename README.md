@@ -64,6 +64,13 @@ Once the script finishes successfully, the repositories are added. You can now i
 sudo pacman -S linux-cachyos linux-cachyos-headers
 ```
 
+**Important:** After installing the new kernel, you must update your bootloader and reboot your system to apply the changes. 
+
+If you are using GRUB, you can update it with:
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+Finally, **reboot** your computer and make sure to select the `linux-cachyos` kernel in the GRUB boot menu.
 ## How to Remove
 
 If you want to remove the CachyOS repositories and revert your `pacman.conf` to its original state, run the script with the `--remove` flag:
